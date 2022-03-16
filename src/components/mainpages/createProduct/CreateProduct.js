@@ -70,7 +70,7 @@ function CreateProduct() {
       formData.append("file", file);
 
       setLoading(true);
-      const res = await axios.post("/api/upload", formData, {
+      const res = await axios.post("https://goldendpoint.herokuapp.com/api/upload", formData, {
         headers: {
           "content-type": "multipart/form-data",
           Authorization: token,
@@ -88,7 +88,7 @@ function CreateProduct() {
       if (!isAdmin) return alert("You're not an admin");
       setLoading(true);
       await axios.post(
-        "/api/destroy",
+        "https://goldendpoint.herokuapp.com/api/destroy",
         { public_id: images.public_id },
         {
           headers: { Authorization: token },
@@ -114,7 +114,7 @@ function CreateProduct() {
 
       if (onEdit) {
         await axios.put(
-          `/api/products/${product._id}`,
+          `https://goldendpoint.herokuapp.com/api/products/${product._id}`,
           { ...product, images },
           {
             headers: { Authorization: token },
@@ -122,7 +122,7 @@ function CreateProduct() {
         );
       } else {
         await axios.post(
-          "/api/products",
+          "https://goldendpoint.herokuapp.com/api/products",
           { ...product, images },
           {
             headers: { Authorization: token },
@@ -156,7 +156,7 @@ function CreateProduct() {
       // Make an AJAX upload request using Axios (replace Cloudinary URL below with your own)
       return axios
         .post(
-          "	https://api.cloudinary.com/v1_1/manji-gang/image/upload",
+          "https://api.cloudinary.com/v1_1/manji-gang/image/upload",
           formData,
           {
             headers: { "X-Requested-With": "XMLHttpRequest" },
