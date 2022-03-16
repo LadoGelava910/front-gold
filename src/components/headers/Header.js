@@ -14,7 +14,7 @@ function Header() {
   const [menu, setMenu] = useState(false);
 
   const logoutUser = async () => {
-    await axios.get("/user/logout");
+    await axios.get("https://goldendpoint.herokuapp.com/user/logout");
 
     localStorage.removeItem("firstLogin");
 

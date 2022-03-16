@@ -23,7 +23,7 @@ function Cart() {
     },[cart])
 
     const addToCart = async (cart) =>{
-        await axios.patch('/user/addcart', {cart}, {
+        await axios.patch('https://goldendpoint.herokuapp.com/user/addcart', {cart}, {
             headers: {Authorization: token}
         })
     }
@@ -67,7 +67,7 @@ function Cart() {
     const tranSuccess = async(payment) => {
         const {paymentID, address} = payment;
 
-        await axios.post('/api/payment', {cart, paymentID, address}, {
+        await axios.post('https://goldendpoint.herokuapp.com/api/payment', {cart, paymentID, address}, {
             headers: {Authorization: token}
         })
 
