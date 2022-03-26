@@ -63,7 +63,7 @@ function Header() {
 
       <div className="logo">
         <h1>
-          <Link to="/">{isAdmin ? "Admin" : "Golds.Ge"}</Link>
+          <Link to="/">{isAdmin ? "Admin" : "MyGold"}</Link>
         </h1>
       </div>
 
@@ -74,12 +74,11 @@ function Header() {
 
         {isAdmin && adminRouter()}
 
-        {
-          isAdmin && loggedRouter()
-          // ) : (
-          //   <li>
-          //     <Link to="/login">Login ✥ Register</Link>
-          //   </li>
+        {isAdmin && loggedRouter()
+        // ) : (
+        //   <li>
+        //     <Link to="/login">Login ✥ Register</Link>
+        //   </li>
         }
 
         {/* <li onClick={() => setMenu(!menu)}>
